@@ -112,7 +112,7 @@ function drawOne(gd, index) {
 
         setClipPath(path, gd, options);
 
-        if(gd._context.edits.shapePosition || (options.editable && options.editing)) {
+        if(gd._context.edits.shapePosition || (options.editable && options._editing)) {
             setupDragElement(gd, path, options, index, shapeLayer);
         }
 
@@ -136,8 +136,8 @@ function drawOne(gd, index) {
         for(var q = 0; q < fullLayout.shapes.length; q++) {
             var shapeIn = fullLayout.shapes[q]._input;
             if(q === id && shapeIn.editable) {
-                // enable/disable - flip editing status
-                shapeIn.editing = !shapeIn.editing;
+                // enable/disable - flip _editing status
+                shapeIn._editing = !shapeIn._editing;
             }
 
             if(q !== id || fullLayout.dragmode !== 'eraseshape') {
