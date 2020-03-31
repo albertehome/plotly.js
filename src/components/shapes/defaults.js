@@ -32,8 +32,7 @@ function handleShapeDefaults(shapeIn, shapeOut, fullLayout) {
     var visible = coerce('visible');
     if(!visible) return;
 
-    var editable = coerce('editable');
-    if(editable) shapeOut._editing = !!shapeIn._editing;
+    coerce('editable');
 
     coerce('layer');
     coerce('opacity');
